@@ -1,0 +1,138 @@
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    font-family: $font-type-1;
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+    line-height: inherit;
+
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 25px;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 18px;
+    &:last-of-type {
+        margin-bottom: 0 !important;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+.slick-slider {
+    .slick-slide {
+        outline: none;
+    }
+}
+
+.custom-container {
+    padding: 60px 100px;
+    max-width: 1920px;
+    margin: auto;
+    .small-width-container {
+        max-width: 1200px;
+    }
+    .small-medium-container {
+        max-width: 1500px;
+    }
+}
+
+.ar-btn {
+    display: inline-block;
+    width: auto !important;
+    outline: none;
+    padding: 0 30px;
+    background-color: #212529;
+    border: 1px solid #212529;
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.section-title {
+    padding-bottom: 20px;
+    &.white-text {
+        color: #ffff;
+    }
+    &.move-left {
+        text-align: left;
+    }
+    h1 {
+    }
+    h2 {
+    }
+}

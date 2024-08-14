@@ -1,0 +1,12 @@
+.tr-summary.detailed-view {
+  background-color: #ddd;
+}
+
+.tr-summary.detailed-view .summary-title {
+  display: none;
+}
+
+.tr-summary.detailed-view .th-summary-title::after {
+  content: 'Group Total';
+  float: right;
+}

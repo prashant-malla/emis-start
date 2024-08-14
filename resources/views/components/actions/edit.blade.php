@@ -1,0 +1,1 @@
+<a href="{{$route}}" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit"><i class="la la-pencil"></i></a>

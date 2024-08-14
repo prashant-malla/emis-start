@@ -1,0 +1,269 @@
+name: 🚀 Deploy on push (main)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-gyanbahu:
+    name: 🎉 Deploy Gyan Bahumukhi
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Deploy to server via ssh
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 23.106.66.209
+          username: gyanbahu
+          key: ${{ secrets.GYANBAHU_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Checkout to project directory
+            cd emis.gyanbahumukhicampus.edu.np
+
+            # Start SSH agent and add SSH key
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/emis_rsa
+
+            # Run custom script to deploy laravel application
+            sh ./.scripts/deploy.sh
+
+            # Stop the SSH agent when done
+            ssh-agent -k
+
+  deploy-pmcpokhara:
+    name: 🎉 Deploy Pmcpokhara
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Deploy to server via ssh
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 69.57.172.23
+          username: pmcpokha
+          key: ${{ secrets.PMC_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Checkout to project directory
+            cd emis.pmcpokhara.edu.np
+
+            # Start SSH agent and add SSH key
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/emis_rsa
+
+            # Run custom script to deploy laravel application
+            sh ./.scripts/deploy.sh
+
+            # Stop the SSH agent when done
+            ssh-agent -k
+
+  deploy-smc:
+    name: 🎉 Deploy Solukhumbu Campus
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Deploy to server via ssh
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 23.106.66.224
+          username: smckushm
+          key: ${{ secrets.SMC_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Checkout to project directory
+            cd emis.smckushma.edu.np
+
+            # Start SSH agent and add SSH key
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/emis_rsa
+
+            # Run custom script to deploy laravel application
+            sh ./.scripts/deploy.sh
+
+            # Stop the SSH agent when done
+            ssh-agent -k
+
+  deploy-koshi:
+    name: 🎉 Deploy Koshi
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.koshistjames.edu.np
+          username: emis@koshistjames.edu.np
+          password: ${{ secrets.KOSHI_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://emis.koshistjames.edu.np/__migrate
+
+  deploy-gsc:
+    name: 🎉 Deploy Gaurishankar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.gsc.edu.np
+          username: emis@gsc.edu.np
+          password: ${{ secrets.GSC_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://emis.gsc.edu.np/__migrate
+
+  deploy-spa:
+    name: 🎉 Deploy SPA Campus
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.spacampus.edu.np
+          username: emis@spacampus.edu.np
+          password: ${{ secrets.SPA_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://emis.spacampus.edu.np/__migrate
+
+  deploy-rabi:
+    name: 🎉 Deploy Rabi Campus
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.rabicampus.edu.np
+          username: emis@rabicampus.edu.np
+          password: ${{ secrets.RABI_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+            public/template/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://emis.rabicampus.edu.np/__migrate
+
+  deploy-himalaya:
+    name: 🎉 Deploy Himalaya KPC
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.himalayakpc.edu.np
+          username: emis_iet@himalayakpc.edu.np
+          password: ${{ secrets.HIMALAYA_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://emis.himalayakpc.edu.np/__migrate
+
+  deploy-phali:
+    name: 🎉 Deploy Phali Multiple Campus
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.pmcparasi.edu.np
+          username: emis@pmcparasi.edu.np
+          password: ${{ secrets.PHALI_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://www.emis.pmcparasi.edu.np/__migrate
+
+  deploy-bmc:
+    name: 🎉 Deploy Bhadrakali
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.bhadrakali.edu.np
+          username: emis@bhadrakali.edu.np
+          password: ${{ secrets.BHADRAKALI_FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            vendor/**
+
+      - name: Run artisan migrate through url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://emis.bhadrakali.edu.np/__migrate

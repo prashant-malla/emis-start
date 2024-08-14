@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Contracts\{{ class }}Interface;
+
+class {{ class }} implements {{ class }}Interface
+{
+
+}

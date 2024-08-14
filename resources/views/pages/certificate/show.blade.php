@@ -1,0 +1,1 @@
+@include('templates.certificates.character', ['certificates' => [$certificate]])

@@ -1,0 +1,596 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/*-------------------------------------- Fonts Starts -------------------------------------*/
+/*--------------------------------------- Fonts Ends --------------------------------------*/
+/*------------------------------------- Colors Starts -------------------------------------*/
+/*-------------------------------------- Colors Ends --------------------------------------*/
+/*-------------------------------------- Mixins Starts ------------------------------------*/
+.ex-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.ex-flex-wrap {
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+}
+
+.ex-vertical {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ex-transition {
+  transition: all 0.6s ease;
+}
+
+.ex-transition-medium {
+  transition: all 1.2s ease;
+}
+
+.ex-transition-large {
+  transition: all 1.8s ease;
+}
+
+/*--------------------------------------- Mixins Ends -------------------------------------*/
+#login-page {
+  background: linear-gradient(to right, #0acffe 0, #495aff 100%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#login-page .login-box {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.29);
+  border-radius: 4px;
+  background: white;
+  width: 40rem;
+}
+#login-page .login-box .login-box-wrapper .header {
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+}
+#login-page .login-box .login-box-wrapper .header .logo {
+  width: 11rem;
+}
+#login-page .login-box .login-box-wrapper .header .logo img {
+  max-width: 100%;
+}
+#login-page .login-box .login-box-wrapper .content {
+  padding: 2.5rem 2.5rem 3rem 2.5rem;
+}
+#login-page .login-box .login-box-wrapper .content .form-title {
+  font-size: 1.9rem;
+  color: #555;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#login-page .login-box .login-box-wrapper .content .login-form .input-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+#login-page .login-box .login-box-wrapper .content .login-form .input-item input {
+  border-radius: 6px;
+  padding: 1.2rem;
+  background-color: #f3f6f9;
+  border-color: #f3f6f9;
+  color: #3f4254;
+  border-bottom: 1px solid #999 !important;
+  font-size: 16px;
+  font-weight: 300;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+#login-page .login-box .login-box-wrapper .content .login-form .input-item input:focus {
+  border-bottom: 2px solid #35aa47 !important;
+  box-shadow: none;
+}
+#login-page .login-box .login-box-wrapper .content .login-form .input-item .icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #888;
+}
+#login-page .login-box .login-box-wrapper .content .login-form button {
+  background: #35aa47;
+  color: white;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 8px;
+  transition: 0.3s;
+}
+#login-page .login-box .login-box-wrapper .content .login-form button:hover {
+  background: #424242;
+}
+#login-page .login-box .login-box-wrapper .content .forgot-password-link {
+  color: #444;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+#login-page .login-box .login-box-wrapper .content .forgot-password-link i {
+  margin-right: 3px;
+}
+#login-page .login-box .login-box-wrapper .content .forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------------ Site Wide Starts -----------------------------------*/
+/*------------------------------------- Site Wide Ends ------------------------------------*/
+/*--------------------------------- Header Wrapper Starts ---------------------------------*/
+#header-wrapper .main-sidebar {
+  background-color: #a9101a;
+  z-index: 70;
+  position: fixed;
+  width: 30rem;
+  min-height: 100vh;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .logo {
+  width: 15.2rem;
+  display: inline-block;
+  align-self: center;
+  padding: 1rem;
+  margin-left: -1.5rem;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .logo img {
+  width: 100%;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav {
+  padding-left: 1rem;
+  height: 600px;
+  overflow: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 5px;
+  display: none;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-left: -5px;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav::-webkit-scrollbar-thumb {
+  background: #888;
+  margin-left: -5px;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav:hover::-webkit-scrollbar {
+  display: block;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper {
+  background-color: rgba(66, 6, 11, 0.7);
+  padding-bottom: 8rem;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-navlink {
+  color: #fff;
+  font-weight: 600;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-navlink .left i {
+  margin-right: 1rem;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-navlink:hover, #header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-navlink.active {
+  background: #fff;
+  border-left: 3px solid #339086;
+  color: #339086;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-navlink.active .right i {
+  transition: 0.3s;
+  transform: rotate(90deg);
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-dropdown-list {
+  background: #eef0f8;
+  padding: 1rem;
+  display: none;
+  transition: 0.3s;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-dropdown-list .main-sidebar-dropdown-item a {
+  color: #a9101a;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 8px;
+  display: inline-block;
+  width: 100%;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-dropdown-list .main-sidebar-dropdown-item a:hover {
+  background: #a9101a;
+  color: white;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-dropdown-list .main-sidebar-dropdown-item a i {
+  font-size: 12px;
+  margin-right: 5px;
+}
+#header-wrapper .main-sidebar .main-sidebar-wrapper .main-sidebar-nav .main-sidebar-nav-wrapper ul.main-sidebar-navlist .main-sidebar-navitem .main-sidebar-dropdown-list.show {
+  display: block;
+}
+#header-wrapper .navbar-section {
+  margin-left: 30rem;
+  background: white;
+  min-height: 6rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#header-wrapper .navbar-section .navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+#header-wrapper .navbar-section .navbar-wrapper .left .sidebar-toggle-btn {
+  background: #a9101a;
+  padding: 1.5rem;
+  border: none;
+  color: white;
+}
+#header-wrapper .navbar-section .navbar-wrapper .left .logo {
+  color: #a9101a;
+  margin-left: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .search-box {
+  display: flex;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .search-box input {
+  padding: 0.8rem;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  border: 1px solid #f2f2f2;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+  background-color: #f2f2f2;
+  font-size: 13px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .search-box input::-moz-placeholder {
+  color: #5e6278;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .search-box input:-ms-input-placeholder {
+  color: #5e6278;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .search-box input::placeholder {
+  color: #5e6278;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .search-box button {
+  padding: 0.8rem 1.2rem;
+  margin: 0;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  border: 1px solid #ddd;
+  border-left: none;
+  font-size: 1.4rem;
+  background: white;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .language {
+  cursor: pointer;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .language img {
+  width: 2.5rem;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item {
+  position: relative;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item span {
+  cursor: pointer;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item span i {
+  font-size: 1.8rem;
+  color: #a9101a;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box {
+  opacity: 0;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: white;
+  padding: 1.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+  min-width: 25rem;
+  transition: 0.4s;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .header {
+  display: flex;
+  gap: 1.3rem;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .header .img-container {
+  width: 8.5rem;
+  border-radius: 3px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .header .img-container img {
+  border-radius: 3px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .header .text-container .name {
+  font-size: 2rem;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .header .text-container .role {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .content li a {
+  font-size: 1.4rem;
+  padding: 1rem;
+  color: #333;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .content li a:hover {
+  background-color: #a9101a;
+  color: white;
+  border-radius: 3px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box .content li a i {
+  margin-right: 5px;
+}
+#header-wrapper .navbar-section .navbar-wrapper .right .right-item .profile-box.show {
+  opacity: 1;
+}
+
+/*--------------------------------- Header Wrapper Starts ---------------------------------*/
+/*-------------------------------- Content Wrapper Starts ---------------------------------*/
+#content-wrapper {
+  background: #f3f3f3;
+  margin-left: 30rem;
+  padding: 2rem 3rem;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: solid 1px #dde4eb;
+  box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  border-radius: 0.35rem;
+  padding: 2rem;
+  flex-basis: 50%;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item .left .icon {
+  width: 2rem;
+  height: 3rem;
+  background: green;
+  color: white;
+  padding: 0.7rem 1rem;
+  font-size: 2.8rem;
+  border-radius: 5px;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item .right {
+  border-left: 1px solid #ccc;
+  padding-left: 1rem;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item .right .title {
+  color: #a9101a;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item .right .price,
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item .right .number {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #000;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item:first-of-type .left .icon {
+  background-color: #66aa18;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item:nth-of-type(2) .left .icon {
+  background-color: #e91e63;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item:nth-of-type(3) .left .icon {
+  background-color: #16b1c5;
+}
+#content-wrapper #dashboard-page .stats-section .stats-section-wrapper .stats-item:nth-of-type(4) .left .icon {
+  background-color: #ff9801;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section {
+  margin-top: 5rem;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper {
+  display: flex;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left {
+  flex-basis: 50%;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item {
+  flex: 1 1 auto;
+  padding: 2rem;
+  color: white;
+  border-radius: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0px 14px 24px rgba(62, 57, 107, 0.2);
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item:first-of-type {
+  background: linear-gradient(90deg, #be3928 35%, rgba(190, 57, 40, 0.8463760504) 100%);
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item:nth-of-type(2) {
+  background: linear-gradient(90deg, #1865bf 35%, rgba(24, 101, 191, 0.787552521) 100%);
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item .icon {
+  font-size: 2.2rem;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item .title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin: 1.5rem 0;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .attendance-section .attendance-section-wrapper .attendance-section-item .number {
+  text-align: right;
+  font-size: 3rem;
+  font-weight: 700;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section {
+  margin-top: 2rem;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper {
+  border-radius: 0.5rem;
+  padding: 1.8rem;
+  background: white;
+  box-shadow: 0px 14px 24px rgba(62, 57, 107, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper .heading {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #a9101a;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper .content .notice-item {
+  border-bottom: 1px solid #f3f3f3;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper .content .notice-item .date {
+  font-size: 1.4rem;
+  color: #594485;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper .content .notice-item .title {
+  font-weight: 500;
+  margin: 5px 0;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper .content .notice-item .person {
+  text-transform: capitalize;
+  color: #dca842;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: flex;
+  gap: 5px;
+}
+#content-wrapper #dashboard-page .notice-and-calendar-section .notice-and-calendar-section-wrapper .left .notice-section .notice-section-wrapper:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/*--------------------------------- Content Wrapper Ends ----------------------------------*/
+/*--------------------------------- Footer Wrapper Starts ---------------------------------*/
+/*---------------------------------- Footer Wrapper Ends ----------------------------------*/
+/*----------------------------------- Components Starts -----------------------------------*/
+.common-remove-tab-style {
+  border-bottom: 0;
+}
+.common-remove-tab-style li a {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+.common-remove-tab-style li a:focus, .common-remove-tab-style li a:hover {
+  background-color: transparent;
+  border: 0;
+}
+.common-remove-tab-style li.active a {
+  background-color: transparent;
+  border: 0;
+}
+.common-remove-tab-style li.active a:focus, .common-remove-tab-style li.active a:hover {
+  background-color: transparent;
+  border: 0;
+}
+
+/*------------------------------------ Components Ends ------------------------------------*/
+/*---------------------------------- Slick Slider Starts ----------------------------------*/
+/*---------------------------------- Slick Slider Starts ----------------------------------*/
+.slick-slider .slick-prev {
+  left: 2rem;
+}
+.slick-slider .slick-next {
+  right: 2rem;
+}
+
+/*----------------------------------- Slick Slider Ends -----------------------------------*/
+/*----------------------------------- Slick Slider Ends -----------------------------------*/
+/*------------------------------------- Mcustom Starts ------------------------------------*/
+/*-------------------------------------- Mcustom Ends -------------------------------------*/
+/*-------------------------------------- Modal Starts -------------------------------------*/
+.modal-dialog {
+  margin: 7rem auto;
+}
+.modal-dialog .modal-header {
+  padding: 0;
+  border: 0;
+}
+.modal-dialog .modal-header button {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  color: #fff;
+  opacity: 1;
+}
+.modal-dialog .modal-content {
+  background: black;
+  border-radius: 0;
+}
+.modal-dialog .modal-content .modal-body {
+  padding: 3rem 2.6rem;
+}
+.modal-dialog .modal-content .modal-body .modal-loading-gif {
+  height: 13rem;
+  position: relative;
+}
+.modal-dialog .modal-content .modal-body .modal-loading-gif img {
+  width: 3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.modal-dialog .modal-content .modal-body p,
+.modal-dialog .modal-content .modal-body h1,
+.modal-dialog .modal-content .modal-body h2,
+.modal-dialog .modal-content .modal-body h3,
+.modal-dialog .modal-content .modal-body h4,
+.modal-dialog .modal-content .modal-body h5,
+.modal-dialog .modal-content .modal-body h6,
+.modal-dialog .modal-content .modal-body ul li,
+.modal-dialog .modal-content .modal-body ol li,
+.modal-dialog .modal-content .modal-body span {
+  color: #fff;
+}
+
+/*--------------------------------------- Modal Ends --------------------------------------*//*# sourceMappingURL=thestyles.css.map */
